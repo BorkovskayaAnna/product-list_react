@@ -23,6 +23,7 @@ a {
 h2 {
   margin: 0 0 10px;
   font-size: 40px;
+  text-transform: capitalize;
 }
 h3 {
   margin: 0 0 10px;
