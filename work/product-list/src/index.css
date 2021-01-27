@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@font-face {
+  font-family: 'San Francisco(SF UI)';
+  src: local('San Francisco(SF UI) Display Medium'), local('San-Francisco(SF-UI)-Display-Medium'),
+  url('./fonts/SFUIDisplay-Medium.woff2') format('woff2'),
+  url('./fonts/SFUIDisplay-Medium.woff') format('woff'),
+  url('./fonts/SFUIDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'San Francisco(SF UI)';
+  src: local('San Francisco(SF UI) Display Semibold'), local('San-Francisco(SF-UI)-Display-Semibold'),
+  url('./fonts/SFUIDisplay-Semibold.woff2') format('woff2'),
+  url('./fonts/SFUIDisplay-Semibold.woff') format('woff'),
+  url('./fonts/SFUIDisplay-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 14px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+button:focus,
+button:active,
+input:focus,
+input:active {
+  outline: none;
+}
+
+.container {
+  margin: auto;
+  max-width: 1900px;
+  padding: 0 10px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn_gradient {
+  padding: 8px 20px;
+  background: linear-gradient(150deg, rgba(239,187,55,1) 0%, rgba(207,158,31,1) 100%);
+  border: none;
+  color: #fff;
+  font-family: "San Francisco", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 30px;
+  transition: all ease .4s;
+}
+button.btn_gradient:hover {
+  box-shadow: 0 0 20px 0 #e8cb80;
+}
+button.btn_gradient:active,
+button.btn_gradient:focus {
+  background: linear-gradient(150deg, #ffd773 0%, #fff8e4 100%);
+  box-shadow: 0 0 20px 0 #e8cb80;
+
+}
+.card-list {
+  margin: 60px 0;
+}
+.single-card {
+  position: relative;
+  padding: 24px;
+  width: calc(33.33% - 24px);
+  max-width: 590px;
+  background: #f8fafc;
+  border-radius: 25px;
+  transition: all ease .4s;
+}
+
+.single-card:hover {
+  box-shadow: 0 4px 45px 0 #c3d4e4;
+}
+.single-card .single-card_img {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 256px;
+  min-height: 261px;
+  border-radius: 25px;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,.1);
+  transition: all ease .4s;
+}
+.single-card:hover .single-card_img {
+  box-shadow: none;
+}
+.single-card_img img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 25px;
+  transition: all ease .4s;
+}
+.compare-label,
+.status-label {
+  position: absolute;
+  z-index: 10;
+}
+.status-label {
+  left: 15px;
+  padding: 5px 20px;
+}
+.compare-label {
+  top: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all ease .4s;
+}
+.compare-label:hover {
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
+}
+
+.card-img_hover,
+.single-card:hover .card-img {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.single-card:hover .card-img_hover {
+  opacity: 1;
+  visibility: visible;
+}
+.btn-buy {
+  width: calc(100% - 140px);
+  font-size: 18px;
+}
+input[type=radio]:checked ~ span {
+  position: relative;
+}
+input[type=radio] ~ span:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: #dedede;
+  border-radius: 5px;
+  content: '';
+}
+input[type=radio]:checked ~ span:after {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background: linear-gradient(152deg, rgba(239,187,55,1) 0%, rgba(207,158,31,1) 100%);
+  content: '';
+}
+
+@media screen and (max-width: 1200px) {
+  .single-card {
+    margin: 0 30px 60px;
+    width: calc(50% - 60px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  .single-card {
+    margin: 0 15px 60px;
+    width: calc(80% - 30px);
+  }
+  .btn-buy {
+    width: 100%;
+    margin: 20px auto 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .single-card {
+    margin: 0 0 60px;
+    width: 100%;
+  }
+
+}
